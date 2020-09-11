@@ -8,7 +8,7 @@ on:
     branches:
       - master
 
-name: R-test
+name: classroom-tests
 
 jobs:
   Case_Study_Tests:
@@ -23,3 +23,7 @@ jobs:
       - name: Run Testthat
         run: source("tests/testthat.R")
         shell: Rscript {0}
+      - uses: education/autograding@v1
+      
+      
+      
