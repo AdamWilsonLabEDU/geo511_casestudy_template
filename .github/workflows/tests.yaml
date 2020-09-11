@@ -23,7 +23,6 @@ jobs:
       - name: Run Testthat
         run: source("tests/testthat.R")
         shell: Rscript {0}
-      - uses: education/autograding@v1
-      
+
       
       
