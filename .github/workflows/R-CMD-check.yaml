@@ -18,9 +18,8 @@ jobs:
       - uses: r-lib/actions/setup-r@master
       - name: Install dependencies
         run: |
-          install.packages(c("testthat","tidyverse","remotes", "rcmdcheck"))
-          remotes::install_deps(dependencies = TRUE)
+          install.packages(c("testthat","tidyverse"))
         shell: Rscript {0}
-      - name: Run Testthat Tests
+      - name: Run Testthat
         run: source("tests/testhat.R")
         shell: Rscript {0}
