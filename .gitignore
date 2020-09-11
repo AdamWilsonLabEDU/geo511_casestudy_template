@@ -13,4 +13,4 @@
 .nc
 .netcdf
 .h5
-tests/testthat/test-case_studies_downloaded.R
+tests/testthat/test-case_studies.R
