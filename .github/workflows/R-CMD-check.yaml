@@ -18,7 +18,7 @@ jobs:
       - uses: r-lib/actions/setup-r@master
       - name: Install dependencies
         run: |
-          install.packages(c("testthat",tidyverse","remotes", "rcmdcheck"))
+          install.packages(c("testthat","tidyverse","remotes", "rcmdcheck"))
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
       - name: Case Study Tests
