@@ -3,3 +3,13 @@
 .RData
 .Ruserdata
 *wc
+*.csv
+*.tif
+*cache*
+.zip
+.bil
+.hdr
+.xls
+.nc
+.netcdf
+.h5
