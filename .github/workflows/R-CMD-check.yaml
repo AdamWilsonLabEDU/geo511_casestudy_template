@@ -11,7 +11,7 @@ on:
 name: R-test
 
 jobs:
-  R-CMD-check:
+  Case_Study_Tests:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,6 +21,6 @@ jobs:
           install.packages(c("testthat","tidyverse","remotes", "rcmdcheck"))
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
-      - name: Case Study Tests
+      - name: Run Testthat Tests
         run: source("tests/testhat.R")
         shell: Rscript {0}
