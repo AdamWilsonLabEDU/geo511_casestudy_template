@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-18.04
     container: rocker/geospatial:latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: r-lib/actions/setup-r@master
+      - name: Checkout Repository
+        uses: actions/checkout@master
       - name: Install dependencies
         run: |
           install.packages(c("testthat","tidyverse"))
