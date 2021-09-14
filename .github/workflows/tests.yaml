@@ -21,8 +21,9 @@ jobs:
           install.packages(c("testthat","tidyverse","RCurl"))
         shell: Rscript {0}
       - name: Run Testthat
-        run: source("tests/testthat.R")
+        run: test_dir(test_path(),stop_on_failure = FALSE,reporter = "progress")
         shell: Rscript {0}
+#        run: source("tests/testthat.R")
 
       
       
