@@ -1,6 +1,6 @@
 # For help debugging build failures open an issue on the RStudio community with the 'github-actions' tag.
 # https://community.rstudio.com/new-topic?category=Package%20development&tags=github-actions
-name: Autograding
+name: Case Study 05
 on:
   push:
     branches:
@@ -10,7 +10,7 @@ on:
       - master
 
 jobs:
-  setup:
+  build:
     runs-on: ubuntu-18.04
     container: rocker/geospatial:latest
     steps:
@@ -23,16 +23,8 @@ jobs:
       - name: Install all needed packages
         run: questionr::qscan(list.files(pattern="*.R",recursive=T), load = TRUE, detail = FALSE)
         shell: Rscript {0}
-  build:
-    needs: setup
-    runs-on: ubuntu-18.04
-    - name: Case Study 01
-      run: testthat::test_file("tests/testthat/test-CS01.R",stop_on_failure = FALSE,reporter = "progress")
-      shell: Rscript {0}
-  CS02:
-    needs: setup
-    runs-on: ubuntu-18.04
-    - name: Case Study 02
-      run: testthat::test_file("tests/testthat/test-CS02.R",stop_on_failure = FALSE,reporter = "progress")
-      shell: Rscript {0}
+      - name: Case Study 05
+        run: testthat::test_file("tests/testthat/test-CS05.R",stop_on_failure = TRUE,reporter = "progress")
+        shell: Rscript {0}
+      
       
