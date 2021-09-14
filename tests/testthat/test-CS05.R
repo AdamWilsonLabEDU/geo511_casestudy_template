@@ -1,4 +1,4 @@
 base_url="https://raw.githubusercontent.com/AdamWilsonLabEDU/GEO511_tests/master/"
-test_url=paste0(base_url,"test-CS01.R")
+test_url=paste0(base_url,"test-CS05.R")
 
 if(RCurl::url.exists(test_url)) source(test_url)
