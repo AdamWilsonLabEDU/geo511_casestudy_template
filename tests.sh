@@ -6,17 +6,13 @@
 echo "Running tests..."
 
 Rscript -e "questionr::qscan(list.files(pattern="*.R",recursive=T), load = TRUE, detail = FALSE)"
-Rscript -e "testthat::test_dir(testthat::test_path(),stop_on_failure = TRUE,reporter = 'progress')"
 
- 
-# 
-# if Rscript -e "source('tests/testthat.R')" ; then
-#  echo "Pass: Program exited zero"
-# else
-#  echo "Fail: Program did not exit zero"
-#  exit 1
-# fi
-# 
-# echo "All tests passed."
-# 
-# exit 0
+
+if Rscript -e "testthat::test_dir(testthat::test_path(),stop_on_failure = TRUE,reporter = 'progress')"; then
+  echo "Pass: Program exited zero"
+ else
+  echo "Fail: Program did not exit zero"
+  exit 1
+fi
+echo "All tests passed."
+exit 0
