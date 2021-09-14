@@ -8,6 +8,6 @@ if(!file.exists("tests/testthat/")) dir.create("tests/testthat/")
 #download.file(url = paste0(repo,"/master/tests.R"),
  #             destfile="tests/testthat/test-case_studies.R")
 
-
+setwd("..")
 # run all tests in the testhat folder
 test_dir("tests/testthat/",stop_on_failure = FALSE,reporter = "progress")
