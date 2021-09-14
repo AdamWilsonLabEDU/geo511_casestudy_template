@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@master
       - name: Install dependencies
         run: |
-          install.packages(c("testthat","tidyverse"))
+          install.packages(c("testthat","tidyverse","RCurl"))
         shell: Rscript {0}
       - name: Run Testthat
         run: source("tests/testthat.R")
