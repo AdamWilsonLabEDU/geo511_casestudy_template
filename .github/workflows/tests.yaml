@@ -18,10 +18,13 @@ jobs:
         uses: actions/checkout@master
       - name: Install dependencies
         run: |
-          install.packages(c("testthat","tidyverse","RCurl"))
+          install.packages(c("testthat","tidyverse","RCurl","questionr"))
+        shell: Rscript {0}
+      - name: Install all needed packages
+        run: questionr::qscan(list.files(pattern="*.R",recursive=T), load = TRUE, detail = FALSE)
         shell: Rscript {0}
       - name: Run Testthat
-        run: testthat::test_dir(test_path(),stop_on_failure = FALSE,reporter = "progress")
+        run: testthat::test_dir(testthat::test_path(),stop_on_failure = FALSE,reporter = "progress")
         shell: Rscript {0}
 #        run: source("tests/testthat.R")
 
