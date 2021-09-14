@@ -23,6 +23,9 @@ jobs:
       - name: Install all needed packages
         run: questionr::qscan(list.files(pattern="*.R",recursive=T), load = TRUE, detail = FALSE)
         shell: Rscript {0}
+      - name: Get Working directory
+        run: getwd(); list.files()
+        shell: Rscript {0}
       - name: Run Testthat
         run: testthat::test_dir(testthat::test_path(),stop_on_failure = FALSE,reporter = "progress")
         shell: Rscript {0}
