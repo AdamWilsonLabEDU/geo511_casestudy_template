@@ -13,4 +13,6 @@
 .nc
 .netcdf
 .h5
+.ppt
+.pptx
 tests/testthat/test-case_studies.R
